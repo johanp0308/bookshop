@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.bookshop.repositories.enitities.BookEntity;
@@ -19,5 +20,10 @@ public class UniversalController {
     @GetMapping("/books")
     public List<BookEntity> findAll(){
         return bookService.findAll();
+    }
+
+    @GetMapping("/book/{isbn}")
+    public BookEntity getByIsbn(@PathVariable String isbn){
+        return bookService.getByIsbn(isbn);
     }
 }

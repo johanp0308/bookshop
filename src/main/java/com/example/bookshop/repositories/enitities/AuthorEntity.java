@@ -11,7 +11,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -25,14 +24,14 @@ public class AuthorEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String names;
-    private String lastNames;
+    private String last_names;
     private String country;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthdate;
 
     @OneToMany()
-    @JsonIgnoreProperties("books")
+    // @JsonIgnoreProperties("books")
     private List<BookEntity> books;
 }
 
