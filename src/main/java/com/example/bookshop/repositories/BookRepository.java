@@ -6,5 +6,5 @@ import com.example.bookshop.repositories.enitities.BookEntity;
 
 public interface BookRepository extends CrudRepository<BookEntity,Long> {
     
-    BookEntity getByIsbn(String isbn);
+    BookEntity findByIsbn(String isbn);;
 }

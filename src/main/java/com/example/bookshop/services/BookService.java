@@ -12,5 +12,5 @@ public interface BookService {
 
     BookEntity save(BookEntity book);
 
-    
+    BookEntity getByIsbn(String isbn);
 }

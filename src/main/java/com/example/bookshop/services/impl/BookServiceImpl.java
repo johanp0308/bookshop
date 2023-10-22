@@ -29,5 +29,10 @@ public class BookServiceImpl implements BookService {
     public BookEntity save(BookEntity book) {
         return bookRepository.save(book);
     }
+
+    @Override
+    public BookEntity getByIsbn(String isbn) {
+        return bookRepository.findByIsbn(isbn);
+    }
     
 }
