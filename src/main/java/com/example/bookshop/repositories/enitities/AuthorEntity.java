@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,8 +30,7 @@ public class AuthorEntity {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthdate;
 
-    @OneToMany()
-    // @JsonIgnoreProperties("books")
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private List<BookEntity> books;
 }
 

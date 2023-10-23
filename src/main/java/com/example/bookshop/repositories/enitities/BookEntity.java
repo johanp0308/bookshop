@@ -2,7 +2,9 @@ package com.example.bookshop.repositories.enitities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,6 +30,6 @@ public class BookEntity {
 
     @ManyToOne()
     @JoinColumn(name="author_id")
-    @JsonIgnoreProperties("author")
-    private AuthorEntity autor;
+    @JsonIgnoreProperties("books")
+    private AuthorEntity author;
 }
